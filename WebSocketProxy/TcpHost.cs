@@ -71,15 +71,15 @@ namespace WebSocketProxy
         #endregion
 
 
-        public async Task AuthenticateAsync(X509Certificate2 certificate)
-        {
-            if (certificate == null)
-                return;
-
-            SslStream sslStream = new SslStream(Stream, false);
-            Stream = sslStream;
-            await sslStream.AuthenticateAsServerAsync(certificate);   
-        }
+//        public async Task AuthenticateAsync(X509Certificate2 certificate)
+//        {
+//            if (certificate == null)
+//                return;
+//
+//            SslStream sslStream = new SslStream(Stream, false);
+//            Stream = sslStream;
+//            await sslStream.AuthenticateAsServerAsync(certificate);   
+//        }
 
         public void BeginAuthenticationAsServer(X509Certificate2 certificate, SslProtocols protocols, AsyncCallback callback, object state)
         {
